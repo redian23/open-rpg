@@ -1,7 +1,5 @@
 #!/bin/bash
 work_path=$(echo -e `pwd`)
-user_save_file=''
-
 if [ -d "$work_path/saves/" ] 
 then
     echo #no_effect
@@ -59,7 +57,11 @@ source story_line.sh
 echo -e "First Battle  ..." 
 sleep 1s
 
-source battle.sh
+#init first enemy 
+enemy_profile_name=boar
+enemy_profile=${work_path}/enemies/${enemy_profile_name}.file
+
+source battle.sh $user_profile $enemy_profile
 
 echo -e "Coming Soon ..."
 

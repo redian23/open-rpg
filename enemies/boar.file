@@ -1,6 +1,6 @@
 #!/bin/bash
 enemy_name='Boar'
-enemy_class='None'
+enemy_class='Beast'
 enemy_health=240
 enemy_physical_damage=10
 enemy_magic_damage=0

@@ -1,7 +1,8 @@
 #!/bin/bash
 work_path=$(echo -e `pwd`)
 
-enemy_profile=$work_path/enemies/boar.file
+user_profile=$1
+enemy_profile=$2
 
 source $user_profile
 source $enemy_profile
@@ -32,8 +33,8 @@ echo -e "tern №$terns"
 
 echo -e "
 _________________________________________________________________
-|\e[32m${player_name}\t\t\t\e[0m|\e[31m${enemy_name}\t\t\t\t\e[0m|
-|Class: $class\t\t\t|Class: None\t\t\t|
+|\e[32m${player_name}\t\t\t\t\e[0m|\e[31m${enemy_name}\t\t\t\t\e[0m|
+|Class: $class\t\t\t|Class: $enemy_class\t\t\t|
 |HP: $player_health\t\t\t|HP: $enemy_health\t\t\t|
 |Ph_Dam: $player_physical_damage\t\t\t|Ph_Dam: $enemy_physical_damage\t\t\t|
 |Mag_Dam: $player_magic_damage\t\t\t|Mag_Dam: $enemy_magic_damage\t\t\t|
