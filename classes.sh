@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source bash-menu.sh
+source func/bash-menu.sh
 
 select_class(){
     while true; do

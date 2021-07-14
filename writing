@@ -1,9 +1,0 @@
-#!/bin/bash
-
-text=$1; 
-for ((i=0; i<${#text}; i++)); 
-do 
-    echo "after 50" | tclsh; 
-    printf "${text:$i:1}"; 
-done; 
-echo;

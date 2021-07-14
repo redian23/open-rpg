@@ -1,6 +1,4 @@
 #!/bin/bash
-work_path=$(echo -e `pwd`)
-
 user_profile=$1
 enemy_profile=$2
 

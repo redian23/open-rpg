@@ -1,10 +1,20 @@
 #!/bin/bash
-source $(echo -e `pwd`)/writing
+
+writing(){
+    text=$1; 
+    for ((i=0; i<${#text}; i++)); 
+    do 
+        echo "after 35" | tclsh; 
+        printf "${text:$i:1}"; 
+    done; 
+    echo;
+}
+
 clear
 echo "Story start to ..."
 echo ""
 
-./writing "The world of Dark Souls is a world of cycles. Kingdoms rise and fall, ages come and go, and even time can end and restart as the flame fades and is renewed. 
+writing "The world of Dark Souls is a world of cycles. Kingdoms rise and fall, ages come and go, and even time can end and restart as the flame fades and is renewed. 
 These cycles are linked to the First Flame, a mysterious manifestation of life that divides and defines separate states such as heat and cold, or life and death. 
 As the First Flame fades, these differences also begin to fade, such as life and death having little distinction, and humans becoming Undead. 
 The onset of an Age of Dark, the time when the First Flame has fully died, is marked by endless nights, rampant undeath, time, space, and reality breaking down, 
