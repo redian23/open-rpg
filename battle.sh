@@ -11,17 +11,16 @@ Warning_text=''
 Dictor_text=''
 Battle_Log=''
 
-#player_health=$player_health
 p_protect=0
 heal_buttle=5
 heal_buttle_size=50
 
-#enemy_health=$enemy_health
 e_protect=0
 
 TERN_NAME=''
 TERN_INDEX=''
 
+attack_index=''
 ##term_index= 
 # `0` - player
 # `1`- enemys
@@ -58,20 +57,24 @@ enemy_attack(){
 }
 
 player_attack(){
-    p_damage=$(expr $player_physical_damage - $e_protect)
-    Battle_Log="$player_name attack $enemy_name -${p_damage}HP"
-    ((enemy_health-=$p_damage))
+    if [ $attack_index -eq "0" ];then
+        p_damage=$(expr $player_physical_damage - $e_protect)
+        Battle_Log="$player_name attack $enemy_name -${p_damage}HP"
+        ((enemy_health-=$p_damage))
+    else
+        m_damage=$(expr $player_magic_damage - $e_protect)
+        Battle_Log="$player_name attack $enemy_name -${m_damage}HP"
+        ((enemy_health-=$m_damage))
+    fi
 }
 
 enemy_defend(){
-
     if [ $e_protect -ne "5" ];
         then ((e_protect+=1))
     fi
 }
 
 player_defend(){
-
     if [ "$p_protect" -ne "5" ];
         then ((p_protect+=1)) 
     fi
@@ -88,7 +91,7 @@ player_heal(){
 }
 
 leave(){
-exit 0
+    exit 0
 }
 
 player_choises(){
@@ -98,7 +101,24 @@ echo -e "Select :"
     do
         case $opt in
         "Attack")
-            player_attack
+            select opt in "Phys" "Magic"; 
+            do
+                case $opt in
+                "Phys")
+                    attack_index=0
+                    player_attack
+                    break
+                    ;;
+                "Magic")
+                    attack_index=1
+                    player_attack
+                    break
+                    ;;
+                *) 
+                    echo "invalid option $REPLY"
+                    ;;
+                esac
+            done
             break
             ;;
         "Defend")

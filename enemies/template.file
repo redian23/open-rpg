@@ -1,0 +1,8 @@
+#!/bin/bash
+enemy_name=
+enemy_class=
+enemy_health=
+enemy_physical_damage=
+enemy_magic_damage=
+enemy_heal=
+

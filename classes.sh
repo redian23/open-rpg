@@ -2,10 +2,6 @@
 
 source bash-menu.sh
 
-echo_contiue(){
-    echo -n "Press enter to continue ... "
-}
-
 select_class(){
     while true; do
     read -p "Select this class? [y\N]" yn
@@ -25,6 +21,7 @@ done
 }
 
 show_stats(){
+    clear
     echo "Class -> "            $class_name
     echo "Health -> "           $health 
     echo "Physical damage -> "  $player_physical_damage
@@ -62,7 +59,6 @@ actionA() {
     show_stats
     damage_info
     select_class
-    echo_contiue
 }
 
 actionB() {
@@ -76,7 +72,6 @@ actionB() {
     show_stats
     damage_info
     select_class
-    echo_contiue
 }
 
 actionC() {
@@ -90,7 +85,6 @@ actionC() {
     show_stats
     damage_info
     select_class
-    echo_contiue
 }
 
 actionD() {
@@ -104,7 +98,6 @@ actionD() {
     show_stats
     damage_info
     select_class
-    echo_contiue
 }
 
 actionF() {
@@ -118,7 +111,6 @@ actionF() {
     show_stats
     damage_info
     select_class
-    echo_contiue
 }
 actionX() {
     echo -e "Exit ..."

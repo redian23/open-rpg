@@ -54,6 +54,21 @@ echo -e "You are ready to ..."
 sleep 1s
 source story_line.sh
 
+
+printf '%s\n' "scenario teleport" | awk '{ print toupper($0) }'
+echo -ne "\r *" 
+sleep 0.5s
+echo -ne "\r \t*" 
+sleep 0.5s
+echo -ne "\r \t*\t*"
+sleep 0.5s
+echo -ne "\r \t*\t*\t*"
+sleep 0.5s
+echo -ne "\r \t*\t*\t*\t*"
+sleep 0.5s
+echo ""
+
+
 echo -e "First Battle  ..." 
 sleep 1s
 

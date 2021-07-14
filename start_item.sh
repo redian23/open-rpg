@@ -2,53 +2,50 @@
 
 source bash-menu.sh
 
-echo_contiue(){
-    echo -n "Press enter to continue ... "
-}
-
 actionA() {
     item_name="Dark ring"
     ((streangt+=5))
+    clear
     echo "Dark ring '+5 streangt'"
     sleep 2s
-    echo "Streangt: ${streangt}" 		>> $user_save_file
-    echo_contiue
+    echo "Streangt: ${streangt}" 		>> $user_profile
 }
 
 actionB() {
     item_name="Master key"
     ((dexterity+=5))
+    clear
     echo "Master key '+5 dexterity'"
     sleep 2s
-    echo "Dexterity: ${dexterity}" 		>> $user_save_file
-    echo_contiue
+    echo "Dexterity: ${dexterity}" 		>> $user_profile
 }
 
 actionC() {
     item_name="Holy rune"
     ((intelligence+=5))
+    clear
     echo "Holy rune '+5 intelligence'"
     sleep 2s
-    echo "Intelligence: ${intelligence}" 	>> $user_save_file
+    echo "Intelligence: ${intelligence}" 	>> $user_profile
     echo_contiue
 }
 
 actionD() {
     item_name="1k yers stoune"
     ((education+=4))
+    clear
     echo "1k yers stoune '+4 education'"
     sleep 2s
-    echo "Education: ${education}" 		>> $user_save_file
-    echo_contiue
+    echo "Education: ${education}" 		>> $user_profile
 }
 
 actionF() {
     item_name="Elder Scrool"
     ((faith+=5))
+    clear
     echo "Elder Scrool '+5 faith'"
     sleep 2s
-    echo "Faith: ${faith}" 		>> $user_save_file
-    echo_contiue
+    echo "Faith: ${faith}" 		>> $user_profile
 }
 
 menuItems=(
