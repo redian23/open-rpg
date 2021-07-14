@@ -1,0 +1,7 @@
+#!/bin/bash
+player_name=red
+class='Knight'
+player_health=150
+player_physical_damage=15
+player_magic_damage=10
+player_heal=0
