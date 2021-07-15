@@ -2,6 +2,8 @@
 enemy_name=
 enemy_class=
 enemy_health=
+enemy_mana=
+enemy_stamina=
 enemy_physical_damage=
 enemy_magic_damage=
 enemy_heal=

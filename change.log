@@ -1,0 +1,8 @@
+version 0.0.5
+- add load saves
+- add $var mana & stamina
+- add write battle log on tmp file
+- fix check save file on folder `/save/
+- rebalance classes
+- add buttle items
+- add enemy_AI hahahaha

@@ -6,9 +6,11 @@ select_class(){
     while true; do
     read -p "Select this class? [y\N]" yn
     case $yn in
-        [Yy]* ) echo "Select ${class_name}" 
+        [Yy]* ) echo "Select ${class_name}"
                 echo "class='${class_name}'"                            >> $user_profile
                 echo "player_health=${health}" 	                        >> $user_profile
+                echo "player_mana='${mana}'"                            >> $user_profile
+                echo "player_stamina=${stamina}" 	                    >> $user_profile
                 echo "player_physical_damage=${player_physical_damage}" >> $user_profile
                 echo "player_magic_damage=${player_magic_damage}"       >> $user_profile
                 echo "player_heal=${player_heal}"                       >> $user_profile
@@ -50,10 +52,11 @@ damage_info(){
 
 actionA() {
     class_name="Mage"
-    health=100 
+    health=100
+    mana=150 
+    stamina=50
     player_physical_damage=10
     player_magic_damage=15
-
     player_heal=2
 
     show_stats
@@ -64,10 +67,11 @@ actionA() {
 actionB() {
     class_name="Knight"
     health=150
+    mana=50
+    stamina=100
     player_physical_damage=15
     player_magic_damage=10
-
-    player_heal=0
+    player_heal=1
 
     show_stats
     damage_info
@@ -77,10 +81,11 @@ actionB() {
 actionC() {
     class_name="Thif"
     health=50
+    mana=100
+    stamina=150 
     player_physical_damage=5 
     player_magic_damage=10
-
-    player_heal=1
+    player_heal=0
 
     show_stats
     damage_info
@@ -89,11 +94,12 @@ actionC() {
 
 actionD() {
     class_name="War"
-    health=150 
+    health=150
+    mana=0
+    stamina=150 
     player_physical_damage=15
     player_magic_damage=5
-
-    player_heal=1
+    player_heal=0
 
     show_stats
     damage_info
@@ -102,10 +108,11 @@ actionD() {
 
 actionF() {
     class_name="Prist"
-    health=100 
+    health=50
+    mana=200
+    stamina=50  
     player_physical_damage=5
     player_magic_damage=15
-
     player_heal=5
 
     show_stats

@@ -1,8 +1,0 @@
-#!/bin/bash
-enemy_name='Skeleton'
-enemy_class='Undead'
-enemy_health=210
-enemy_physical_damage=15
-enemy_magic_damage=0
-enemy_heal=0
-

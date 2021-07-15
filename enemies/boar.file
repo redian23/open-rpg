@@ -2,6 +2,8 @@
 enemy_name='Boar'
 enemy_class='Beast'
 enemy_health=240
+enemy_mana=0
+enemy_stamina=120
 enemy_physical_damage=10
 enemy_magic_damage=0
 enemy_heal=0

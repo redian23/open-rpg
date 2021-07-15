@@ -4,11 +4,10 @@ source func/bash-menu.sh
 
 actionA() {
     item_name="Dark ring"
-    ((streangt+=5))
     clear
     echo "Dark ring '+5 streangt'"
     sleep 2s
-    echo "Streangt: ${streangt}" 		>> $user_profile
+    echo "Streangt= ${streangt}" 		>> $user_profile
 }
 
 actionB() {
