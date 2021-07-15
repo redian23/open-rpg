@@ -6,3 +6,10 @@ version 0.0.5
 - rebalance classes
 - add buttle items
 - add enemy_AI hahahaha
+
+version 0.0.6
+- add 2 phys attacks
+- add 2 mag attacks
+- add 3 heal buttle when create chara
+- add submenu in menu attack
+- add emoji on battle

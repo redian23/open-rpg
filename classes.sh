@@ -32,7 +32,6 @@ show_stats(){
     echo "" 
 }
 
-
 damage_info(){
     echo "IIINNNFFFFOOOO"
     level=10
@@ -58,6 +57,8 @@ actionA() {
     player_physical_damage=10
     player_magic_damage=15
     player_heal=2
+    little_heal_buttle_quantity=3
+
 
     show_stats
     damage_info
@@ -72,6 +73,7 @@ actionB() {
     player_physical_damage=15
     player_magic_damage=10
     player_heal=1
+    little_heal_buttle_quantity=3
 
     show_stats
     damage_info
@@ -86,6 +88,7 @@ actionC() {
     player_physical_damage=5 
     player_magic_damage=10
     player_heal=0
+    little_heal_buttle_quantity=3
 
     show_stats
     damage_info
@@ -100,6 +103,7 @@ actionD() {
     player_physical_damage=15
     player_magic_damage=5
     player_heal=0
+    little_heal_buttle_quantity=3
 
     show_stats
     damage_info
@@ -114,6 +118,7 @@ actionF() {
     player_physical_damage=5
     player_magic_damage=15
     player_heal=5
+    little_heal_buttle_quantity=3
 
     show_stats
     damage_info

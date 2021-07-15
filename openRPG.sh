@@ -1,7 +1,7 @@
 #!/bin/bash
 
 work_path=$(echo -e `pwd`)
-version=0.0.5
+version=0.0.6
 
 ##################################################################
 
@@ -118,10 +118,8 @@ sleep 1s
 enemy_profile_name=boar
 enemy_profile=${work_path}/enemies/${enemy_profile_name}.file
 
-
 debug $user_profile && sleep 1s
 debug $enemy_profile && sleep 1s
-
 
 source battle.sh $user_profile $enemy_profile 
 
