@@ -2,13 +2,20 @@
 
 source func/bash-menu.sh
 
+rewrite(){
+    sed -i "s/$1/$2/gi" $user_profile
+}
+
 actionA() {
     item_name="Dark ring"
     clear
     echo "Dark ring '+5 streangt'"
     sleep 2s
-    echo "Streangt= ${streangt}" 		>> $user_profile
-}
+
+    search=$(grep "player_health=" "wert.save")
+    replace="player_health=${player_health}"
+    
+    rewrite $search $replace
 
 actionB() {
     item_name="Master key"

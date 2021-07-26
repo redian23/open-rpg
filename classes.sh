@@ -9,11 +9,12 @@ select_class(){
         [Yy]* ) echo "Select ${class_name}"
                 echo "class='${class_name}'"                            >> $user_profile
                 echo "player_health=${health}" 	                        >> $user_profile
-                echo "player_mana='${mana}'"                            >> $user_profile
+                echo "player_mana=${mana}"                              >> $user_profile
                 echo "player_stamina=${stamina}" 	                    >> $user_profile
                 echo "player_physical_damage=${player_physical_damage}" >> $user_profile
                 echo "player_magic_damage=${player_magic_damage}"       >> $user_profile
                 echo "player_heal=${player_heal}"                       >> $user_profile
+                echo "player_heal_buttles=${little_heal_buttle_quantity}" >> $user_profile
                 sleep 0.5s
                 break;;
         [Nn]* ) menuLoop;;
@@ -32,22 +33,6 @@ show_stats(){
     echo "" 
 }
 
-damage_info(){
-    echo "IIINNNFFFFOOOO"
-    level=10
-    level_sceil=$[$level/2]
-    phisical_damage=$[$player_physical_damage*$level_sceil]
-    magic_damage=$[$player_magic_damage*$level_sceil]
-    heal=$[$player_magic_damage+$player_heal/$level_sceil]
-
-    sleep 0.5s
-    echo "Level -> "            $level
-    echo "Sceil -> "            $level_sceil
-    echo "Phisical damage -> "  $phisical_damage
-    echo "Magic damage -> "     $magic_damage
-    echo "Heal -> "             $player_heal
-    echo ""
-}
 
 actionA() {
     class_name="Mage"
@@ -59,9 +44,7 @@ actionA() {
     player_heal=2
     little_heal_buttle_quantity=3
 
-
     show_stats
-    damage_info
     select_class
 }
 
@@ -76,7 +59,6 @@ actionB() {
     little_heal_buttle_quantity=3
 
     show_stats
-    damage_info
     select_class
 }
 
@@ -91,7 +73,6 @@ actionC() {
     little_heal_buttle_quantity=3
 
     show_stats
-    damage_info
     select_class
 }
 
@@ -106,7 +87,6 @@ actionD() {
     little_heal_buttle_quantity=3
 
     show_stats
-    damage_info
     select_class
 }
 
@@ -121,7 +101,6 @@ actionF() {
     little_heal_buttle_quantity=3
 
     show_stats
-    damage_info
     select_class
 }
 actionX() {

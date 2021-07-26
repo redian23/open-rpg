@@ -2,4 +2,4 @@
 ## First RPG writed on BASH
 
 ## Start game 
-    ./openRPG
+    ./openRPG.sh

@@ -17,10 +17,36 @@ fi
 
 if [ -d "$work_path/saves/" ] 
 then
-    echo #no_effect
+    :
 else
     mkdir $work_path/saves/
 fi
+
+check_console_size(){
+    local console_height="$(stty size | cut -c 1-3)"
+    local console_width="$(stty size | cut -c 4-6)"
+
+    if [[ "$console_height" -lt "30" || "$console_width" -lt "140" ]];then
+        stty echo
+        echo -e ""
+        echo -e "\e[31mOpen console on fullscreen mode or resize terminal window!\e[0m"
+        echo -e "\e[33mMininal window size 150x30\e[0m"
+        sleep 3s
+        exit 0
+    fi
+}
+menu_from_array (){
+select item; 
+do
+    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $# ];then
+        echo "The selected is $item"
+        save_file_name=${item}
+        break;
+    else
+        echo "Wrong selection: Select any number from 1-$#"
+    fi
+done
+}
 
 start_menu(){
 echo -e "Select:"
@@ -70,23 +96,9 @@ create_character(){
     # sleep 1s
     # source start_item.sh
 
-
     echo -e "You are ready to ..." 
     sleep 1s
     source story_line.sh
-}
-
-menu_from_array (){
-select item; 
-do
-    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $# ];then
-        echo "The selected is $item"
-        save_file_name=${item}
-        break;
-    else
-        echo "Wrong selection: Select any number from 1-$#"
-    fi
-done
 }
 
 ##############################################################
@@ -96,6 +108,7 @@ echo -e "Created by Redian23"
 echo -e "Version ${version}"
 echo ""
 
+check_console_size
 start_menu
 
 printf '%s\n' "scenario teleport" | awk '{ print toupper($0) }'

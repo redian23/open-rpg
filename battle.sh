@@ -8,7 +8,7 @@ source items/buttle.sh
 
 p_emoji=""
 p_emoji_t1="༼つಠ益ಠ ༽つ ─=≡ΣO))"
-p_emoji_t2="༼^ಠwಠ ༽^"
+p_emoji_t2="Y༼ ಠwಠ Y༽"
 
 e_emoji=""
 e_emoji_t1="༼つ◕(oo)◕༽つ "
@@ -71,7 +71,7 @@ physical_attack_might(){
 }
 
 physical_attack_shield(){
-    shield_damage=$(expr $player_physical_damage + 5 - $e_protect)
+    shield_damage=$(expr $player_physical_damage + 15 - $e_protect)
     Battle_Log="$player_name attack $enemy_name -${shield_damage}HP"
     ((player_stamina-=20))
     ((enemy_health-=$shield_damage))
@@ -79,7 +79,7 @@ physical_attack_shield(){
 
 
 player_magic_attack(){
-    if [ "$player_mana" -le "5" ];then
+    if [ "$player_mana" -le "15" ];then
         Warning_text="Mana point is over"
     else
         if [ $magic_attack_index -eq "0" ];then
@@ -91,14 +91,14 @@ player_magic_attack(){
 }
 
 magic_attack_pyroblast(){
-    pyroblast_damage=$(expr $player_magic_damage + 10 - $e_protect)
+    pyroblast_damage=$(expr $player_magic_damage + 20 - $e_protect)
     Battle_Log="$player_name attack $enemy_name -${pyroblast_damage}HP"
     ((player_mana-=40))
     ((enemy_health-=$pyroblast_damage))
 }
 
 magic_attack_frost_straick(){
-    frost_straick_damage=$(expr $player_magic_damage + 5 - $e_protect)
+    frost_straick_damage=$(expr $player_magic_damage + 10 - $e_protect)
     Battle_Log="$player_name attack $enemy_name -${frost_straick_damage}HP"
     ((player_mana-=20))
     ((enemy_health-=$frost_straick_damage))
@@ -257,6 +257,8 @@ do
     if [ "$enemy_health" -le "0" ];then
         clear
         echo "$player_name WIN"
+        echo "Seat down and relax"
+        sleep 2s
         break
     fi
     
