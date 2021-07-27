@@ -8,3 +8,4 @@ player_physical_damage=10
 player_magic_damage=15
 player_heal=2
 little_heal_buttle_quantity=3
+player_current_location=Asminia

@@ -2,7 +2,7 @@
 
 source func/bash-menu.sh
 
-rewrite(){
+update_variable(){
     sed -i "s/$1/$2/gi" $user_profile
 }
 
@@ -15,7 +15,7 @@ actionA() {
     search=$(grep "player_health=" "wert.save")
     replace="player_health=${player_health}"
     
-    rewrite $search $replace
+    update_variable $search $replace
 
 actionB() {
     item_name="Master key"
